@@ -1,113 +1,150 @@
-import Image from 'next/image'
+import { Fragment } from "react";
+import ButtonPage from "./button/page";
+import { SpacingsPage } from "./spacings";
+import { LayoutContainer, FlexBox, GridBox, Col, GridCol } from "@/components/Layouts";
+import H1 from "@/components/Typography/H1";
+import H2 from "@/components/Typography/H2";
+import H3 from "@/components/Typography/H3";
+import H4 from "@/components/Typography/H4";
+import H5 from "@/components/Typography/H5";
+import H6 from "@/components/Typography/H6";
+import P from "@/components/Typography/P";
+import { cn } from "@/utils/helpers";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <Fragment>
+      <LayoutContainer className='py-1632'>
+        <div className='mb-24 border-b pb-24 theme:border-gray-500/50'>
+          <H4 noMargin>Typography</H4>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <H1 weight='medium'>Design system that works</H1>
+        <H2 weight='medium'>Design system that works</H2>
+        <H3 weight='medium'>Design system that works</H3>
+        <H4 weight='medium'>Design system that works</H4>
+        <H5 weight='medium'>Design system that works</H5>
+        <H6 weight='medium'>Design system that works</H6>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+        <P size='large'>Design system that works</P>
+        <P>Design system that works</P>
+        <P size='small'>Design system that works</P>
+        <P size='tiny'>Design system that works</P>
+        <P size='micro'>Design system that works</P>
+      </LayoutContainer>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <LayoutContainer className='py-1632'>
+        <div className='mb-32 border-b pb-24 theme:border-gray-500/50'>
+          <H4 noMargin>Colors</H4>
+        </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+        <GridBox className='mt-2448 gap-1624' xs={3} sm={4} md={5} lg={7}>
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-primary-light'
+          />
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-secondary-light'
+          />
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-accent-light'
+          />
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-gray-500'
+          />
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-success-light'
+          />
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-danger-light'
+          />
+          <div
+            className='aspect-square w-full transition-all 
+          duration-1000 ease-in-out theme:bg-warning-light'
+          />
+        </GridBox>
+      </LayoutContainer>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <LayoutContainer className='py-1632'>
+        <div className='mb-32 border-b pb-24 theme:border-gray-500/50'>
+          <H4 noMargin>Spacings (paddings, margins, gaps)</H4>
+        </div>
+
+        <SpacingsPage />
+      </LayoutContainer>
+
+      <LayoutContainer className='py-1632'>
+        <div className='mb-32 border-b pb-24 theme:border-gray-500/50'>
+          <H4 noMargin>Buttons</H4>
+        </div>
+
+        <ButtonPage />
+      </LayoutContainer>
+
+      <LayoutContainer className='py-1632'>
+        <div className='mb-32 border-b pb-24 theme:border-gray-500/50'>
+          <H4 noMargin>FlexBox Layout</H4>
+        </div>
+        <FlexBox className={"gap-1632"} wrap='max-md'>
+          <Col
+            as={FlexBox}
+            md={7}
+            className={cn(
+              "flex-center rounded-md p-1640 theme:bg-secondary-light/50",
+              "md:me-offset-1",
+            )}>
+            <P size='large'>card 1 Lorem ipsum dolor sit amet.</P>
+          </Col>
+
+          <Col
+            as={FlexBox}
+            md={4}
+            className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+            <P size='large'>card 2</P>
+          </Col>
+        </FlexBox>
+
+        <FlexBox className={"mt-32 gap-1632 max-md:flex-wrap-reverse"}>
+          <Col
+            as={FlexBox}
+            md={4}
+            className={cn("flex-center rounded-md p-1640 theme:bg-secondary-light/50")}>
+            <P size='large'>card 1 Lorem ipsum dolor sit amet.</P>
+          </Col>
+
+          <Col
+            as={FlexBox}
+            md={8}
+            className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+            <P size='large'>card 2</P>
+          </Col>
+        </FlexBox>
+      </LayoutContainer>
+
+      <LayoutContainer className='py-1640'>
+        <div className='mb-32 border-b pb-24 theme:border-gray-500/50'>
+          <H4 noMargin>Grid Layout</H4>
+        </div>
+        <GridBox className={cn("w-full gap-1632")} xs={1} sm={2} md={3}>
+          {[...Array(12)].fill("card").map((item, i) => (
+            <GridCol
+              as={FlexBox}
+              key={i}
+              xs={1}
+              sm={i === 6 ? 2 : 1}
+              className={cn("flex-center h-32 rounded-md p-1624 theme:bg-primary-light/60")}>
+              <P size='large' className='text-color-dark'>
+                {item}
+              </P>
+            </GridCol>
+          ))}
+        </GridBox>
+      </LayoutContainer>
+    </Fragment>
+  );
 }
