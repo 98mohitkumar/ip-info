@@ -7,7 +7,7 @@ type buttonStateType = {
   size?: "small" | "medium" | "large";
 };
 
-const ButtonPage = () => {
+const ButtonsPreview = () => {
   const variants: Array<buttonStateType> = [
     { background: "primary", variant: "flat", size: "small" },
     { background: "primary", variant: "flat", size: "medium" },
@@ -66,4 +66,4 @@ const ButtonPage = () => {
   );
 };
 
-export default ButtonPage;
+export default ButtonsPreview;

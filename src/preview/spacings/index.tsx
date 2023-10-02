@@ -1,7 +1,7 @@
 import { FlexBox } from "@/components/Layouts";
 import P from "@/components/Typography/P";
 
-export const SpacingsPage = () => {
+const SpacingsPreview = () => {
   const spacings = [4, 8, 12, 16, 24, 32, 40, 48, 64, 80];
 
   const renderList = [
@@ -28,3 +28,5 @@ export const SpacingsPage = () => {
     </FlexBox>
   );
 };
+
+export default SpacingsPreview;

@@ -1,6 +1,4 @@
 import { Fragment } from "react";
-import ButtonPage from "./button/page";
-import { SpacingsPage } from "./spacings";
 import { LayoutContainer, FlexBox, GridBox, Col, GridCol } from "@/components/Layouts";
 import H1 from "@/components/Typography/H1";
 import H2 from "@/components/Typography/H2";
@@ -9,6 +7,8 @@ import H4 from "@/components/Typography/H4";
 import H5 from "@/components/Typography/H5";
 import H6 from "@/components/Typography/H6";
 import P from "@/components/Typography/P";
+import ButtonsPreview from "@/preview/buttons";
+import SpacingsPreview from "@/preview/spacings";
 import { cn } from "@/utils/helpers";
 
 export default function Home() {
@@ -75,7 +75,7 @@ export default function Home() {
           <H4 noMargin>Spacings (paddings, margins, gaps)</H4>
         </div>
 
-        <SpacingsPage />
+        <SpacingsPreview />
       </LayoutContainer>
 
       <LayoutContainer className='py-1632'>
@@ -83,7 +83,7 @@ export default function Home() {
           <H4 noMargin>Buttons</H4>
         </div>
 
-        <ButtonPage />
+        <ButtonsPreview />
       </LayoutContainer>
 
       <LayoutContainer className='py-1632'>

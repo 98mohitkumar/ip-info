@@ -112,7 +112,7 @@ const responsiveFontSizeBuilder = (
 
 type FontConfig = {
   [key: string]: [
-    fontSize: string,
+    string,
     {
       lineHeight: string;
       letterSpacing: string;

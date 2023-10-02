@@ -6,6 +6,21 @@ body {
   @apply theme:bg-background-light theme:text-color-light selection:theme:bg-accent-dark/50;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+/* Corner  */
+::-webkit-scrollbar-corner {
+  @apply bg-transparent;
+}
+
+/* Scroll Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500 hover:bg-gray-600
+}
+
 .flex-center {
   @apply items-center justify-center;
 }
