@@ -90,38 +90,77 @@ export default function Home() {
         <div className='mb-32 border-b pb-24 theme:border-gray-500/50'>
           <H4 noMargin>FlexBox Layout</H4>
         </div>
-        <FlexBox className={"gap-1632"} wrap='max-md'>
-          <Col
-            as={FlexBox}
-            md={7}
-            className={cn(
-              "flex-center rounded-md p-1640 theme:bg-secondary-light/50",
-              "md:me-offset-1",
-            )}>
-            <P size='large'>card 1 Lorem ipsum dolor sit amet.</P>
+        <FlexBox className='-mx-16' wrap='xs'>
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 1</P>
+            </FlexBox>
           </Col>
 
-          <Col
-            as={FlexBox}
-            md={4}
-            className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
-            <P size='large'>card 2</P>
+          <Col md={8} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 2</P>
+            </FlexBox>
           </Col>
         </FlexBox>
 
-        <FlexBox className={"mt-32 gap-1632 max-md:flex-wrap-reverse"}>
-          <Col
-            as={FlexBox}
-            md={4}
-            className={cn("flex-center rounded-md p-1640 theme:bg-secondary-light/50")}>
-            <P size='large'>card 1 Lorem ipsum dolor sit amet.</P>
+        <FlexBox className='-mx-16 mt-2432' wrap='xs'>
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 1</P>
+            </FlexBox>
           </Col>
 
-          <Col
-            as={FlexBox}
-            md={8}
-            className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
-            <P size='large'>card 2</P>
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 2</P>
+            </FlexBox>
+          </Col>
+
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 3</P>
+            </FlexBox>
+          </Col>
+        </FlexBox>
+
+        <FlexBox className='-mx-16 mt-2432' wrap='xs'>
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 1</P>
+            </FlexBox>
+          </Col>
+
+          <Col md={2} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 2</P>
+            </FlexBox>
+          </Col>
+
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 3</P>
+            </FlexBox>
+          </Col>
+
+          <Col md={2} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 4</P>
+            </FlexBox>
+          </Col>
+        </FlexBox>
+
+        <FlexBox className='-mx-16 mt-32' wrap='xs'>
+          <Col md={4} className='px-16'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 1</P>
+            </FlexBox>
+          </Col>
+
+          <Col md={6} className='px-16 md:ms-offset-2'>
+            <FlexBox className='flex-center rounded-md p-1640 theme:bg-secondary-light/50'>
+              <P size='large'>card 2</P>
+            </FlexBox>
           </Col>
         </FlexBox>
       </LayoutContainer>

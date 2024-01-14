@@ -20,9 +20,11 @@ const textColorClasses = Object.entries(colors)
   .flat();
 
 const twMerge = extendTailwindMerge({
-  classGroups: {
-    "font-size": [{ text: Object.keys(fontSizesConfig) }],
-    "text-color": [{ text: textColorClasses }],
+  extend: {
+    classGroups: {
+      "font-size": [{ text: Object.keys(fontSizesConfig) }],
+      "text-color": [{ text: textColorClasses }],
+    },
   },
 });
 

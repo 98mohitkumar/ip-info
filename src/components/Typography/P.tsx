@@ -10,14 +10,23 @@ const P = polyRef<
   SupportedTypographyAsProp, // valid as prop values for suggestions
   ParagraphCustomProps, // custom typography props
   OnlyAs<SupportedTypographyAsProp> // valid as from values for type Checking
->(({ className, children, as, noMargin, size, weight = "regular", ...props }, ref) => {
-  const Element = as || "p";
-
-  return (
+>(
+  (
+    {
+      className,
+      children,
+      as: Element = "p",
+      noMargin,
+      size = "default",
+      weight = "regular",
+      ...props
+    },
+    ref,
+  ) => (
     <Element
       ref={ref}
       className={cn(
-        "my-8 text-p",
+        "my-8",
         { "m-0": noMargin },
         {
           "font-light": matches(weight, "light"),
@@ -27,7 +36,7 @@ const P = polyRef<
         },
         {
           "text-h6": matches(size, "large"),
-          "text-p": matches(size, "medium"),
+          "text-p": matches(size, "default"),
           "text-small": matches(size, "small"),
           "text-tiny": matches(size, "tiny"),
           "text-micro": matches(size, "micro"),
@@ -37,7 +46,7 @@ const P = polyRef<
       {...props}>
       {children}
     </Element>
-  );
-});
+  ),
+);
 
 export default P;

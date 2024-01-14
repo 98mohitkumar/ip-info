@@ -1,4 +1,4 @@
-import { type ComponentPropsWithRef } from "react";
+import { type ComponentPropsWithoutRef } from "react";
 import { OnlyAs } from "react-polymorphed";
 import type { PolymorphicAsProp } from "@/lib/types";
 import { cn, matches, polyRef } from "@/utils/helpers";
@@ -11,21 +11,20 @@ type ColumnWidthProps = {
   md?: ColCount;
   lg?: ColCount;
   xl?: ColCount;
-  type?: "grid" | "flex";
 };
 
-type DivLayoutProps = ComponentPropsWithRef<"div">;
+type DivLayoutProps = ComponentPropsWithoutRef<"div">;
 
 // ------------------- Layout container -----------------
-export const LayoutContainer = polyRef<"div", DivLayoutProps, OnlyAs<PolymorphicAsProp<"div">>>(
-  ({ className = "", as: Element = "section", children, ...props }, ref) => {
-    return (
-      <Element ref={ref} className={cn("mx-auto max-w-screen-2xl px-1648", className)} {...props}>
-        {children}
-      </Element>
-    );
-  },
-);
+export const LayoutContainer = polyRef<
+  "section",
+  DivLayoutProps,
+  OnlyAs<PolymorphicAsProp<"section">>
+>(({ className = "", as: Element = "section", children, ...props }, ref) => (
+  <Element ref={ref} className={cn("mx-auto max-w-screen-2xl px-1648", className)} {...props}>
+    {children}
+  </Element>
+));
 
 type FlexWrap = {
   wrap?:
@@ -44,36 +43,43 @@ type FlexWrap = {
 
 // ----------------- Flex container ---------------
 export const FlexBox = polyRef<"div", DivLayoutProps & FlexWrap, OnlyAs<PolymorphicAsProp<"div">>>(
-  ({ className = "", as: Element = "div", wrap, children, ...props }, ref) => {
-    return (
-      <Element
-        ref={ref}
-        className={cn(
-          "flex",
-          {
-            "flex-wrap": matches("xs", wrap),
-            "flex-wrap sm:flex-nowrap": matches("max-xs", wrap),
-            "sm:flex-wrap": matches("sm", wrap),
-            "max-sm:flex-wrap": matches("max-sm", wrap),
-            "md:flex-wrap": matches("md", wrap),
-            "max-md:flex-wrap": matches("max-md", wrap),
-            "lg:flex-wrap": matches("lg", wrap),
-            "max-lg:flex-wrap": matches("max-lg", wrap),
-            "xl:flex-wrap": matches("xl", wrap),
-            "max-xl:flex-wrap": matches("max-xl", wrap),
-            "flex-nowrap": matches("no-wrap", wrap),
-          },
-          className,
-        )}
-        {...props}>
-        {children}
-      </Element>
-    );
-  },
+  ({ className = "", as: Element = "div", wrap, children, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={cn(
+        "flex",
+        {
+          "flex-wrap": matches("xs", wrap),
+          "flex-wrap sm:flex-nowrap": matches("max-xs", wrap),
+          "sm:flex-wrap": matches("sm", wrap),
+          "max-sm:flex-wrap": matches("max-sm", wrap),
+          "md:flex-wrap": matches("md", wrap),
+          "max-md:flex-wrap": matches("max-md", wrap),
+          "lg:flex-wrap": matches("lg", wrap),
+          "max-lg:flex-wrap": matches("max-lg", wrap),
+          "xl:flex-wrap": matches("xl", wrap),
+          "max-xl:flex-wrap": matches("max-xl", wrap),
+          "flex-nowrap": matches("no-wrap", wrap),
+        },
+        className,
+      )}
+      {...props}>
+      {children}
+    </Element>
+  ),
 );
 
 // ------------------ Flex item ------------------
-const getColClasses = ({ xs, sm, md, lg, xl, type = "flex" }: ColumnWidthProps) => {
+const getColClasses = ({
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+  type = "flex",
+}: ColumnWidthProps & {
+  type?: "flex" | "grid";
+}) => {
   let widthXsString: string;
   let widthSmString: string;
   let widthMdString: string;
@@ -97,34 +103,32 @@ const getColClasses = ({ xs, sm, md, lg, xl, type = "flex" }: ColumnWidthProps) 
   return [widthXsString, widthSmString, widthMdString, widthLgString, widthXlString].join(" ");
 };
 
-type FlexColProps = ColumnWidthProps & DivLayoutProps & { grow?: boolean; noShrink?: boolean };
+type FlexColProps = ColumnWidthProps & DivLayoutProps & { grow?: boolean; shrink?: boolean };
 
 export const Col = polyRef<"div", FlexColProps, OnlyAs<PolymorphicAsProp<"div">>>(
   (
-    { className = "", as: Element = "div", xs, sm, md, lg, xl, children, grow, noShrink, ...props },
+    { className = "", as: Element = "div", xs, sm, md, lg, xl, children, grow, shrink, ...props },
     ref,
-  ) => {
-    return (
-      <Element
-        ref={ref}
-        className={cn(
-          "flex-shrink-1 w-12/12 flex-grow-0",
-          getColClasses({
-            xs,
-            sm,
-            md,
-            lg,
-            xl,
-          }),
-          { "flex-grow-1": grow },
-          { "flex-shrink-0": noShrink },
-          className,
-        )}
-        {...props}>
-        {children}
-      </Element>
-    );
-  },
+  ) => (
+    <Element
+      ref={ref}
+      className={cn(
+        "w-12/12 flex-shrink-0 flex-grow-0",
+        getColClasses({
+          xs,
+          sm,
+          md,
+          lg,
+          xl,
+        }),
+        { "flex-grow-1": grow },
+        { "flex-shrink-1": shrink },
+        className,
+      )}
+      {...props}>
+      {children}
+    </Element>
+  ),
 );
 
 // ------------ Grid container ----------------
@@ -141,27 +145,23 @@ const getGridCols = ({ xs, sm, md, lg, xl }: ColumnWidthProps) => {
 type GridBoxProps = DivLayoutProps & ColumnWidthProps;
 
 export const GridBox = polyRef<"div", GridBoxProps, OnlyAs<PolymorphicAsProp<"div">>>(
-  ({ className = "", children, as: Element = "div", xs, sm, md, lg, xl, ...props }, ref) => {
-    return (
-      <Element
-        ref={ref}
-        className={cn("grid", getGridCols({ xs, sm, md, lg, xl }), className)}
-        {...props}>
-        {children}
-      </Element>
-    );
-  },
+  ({ className = "", children, as: Element = "div", xs, sm, md, lg, xl, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={cn("grid", getGridCols({ xs, sm, md, lg, xl }), className)}
+      {...props}>
+      {children}
+    </Element>
+  ),
 );
 
 export const GridCol = polyRef<"div", GridBoxProps, OnlyAs<PolymorphicAsProp<"div">>>(
-  ({ className = "", children, as: Element = "div", xs, sm, md, lg, xl, ...props }, ref) => {
-    return (
-      <Element
-        ref={ref}
-        className={cn("col-span-1", getColClasses({ xs, sm, md, lg, xl, type: "grid" }), className)}
-        {...props}>
-        {children}
-      </Element>
-    );
-  },
+  ({ className = "", children, as: Element = "div", xs, sm, md, lg, xl, ...props }, ref) => (
+    <Element
+      ref={ref}
+      className={cn("col-span-1", getColClasses({ xs, sm, md, lg, xl, type: "grid" }), className)}
+      {...props}>
+      {children}
+    </Element>
+  ),
 );
