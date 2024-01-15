@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import Image from "next/image";
 import { Fragment } from "react";
 import Error from "@/components/Error";
@@ -14,9 +15,11 @@ export async function generateMetadata() {
 }
 
 export default async function Home({ searchParams }: { searchParams?: { ip: string } }) {
-  const ipQuery = searchParams?.ip || "";
+  const forwardedFor = headers().get("x-forwarded-for");
+  const clientIP = process.env.NODE_ENV === "development" ? "1.1.1.1" : forwardedFor;
+  const ipQuery = searchParams?.ip;
 
-  const res = await fetch(ipQuery ? `${apiBaseUrl}${ipQuery}` : apiBaseUrl, {
+  const res = await fetch(`${apiBaseUrl}${ipQuery || clientIP}`, {
     cache: "no-store",
   });
 
