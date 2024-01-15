@@ -55,7 +55,9 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
                 title='Location'
                 copy={
                   <FlexBox className='items-center gap-8'>
-                    <P noMargin>{city + ", " + country}</P>
+                    <P noMargin className='font-mono'>
+                      {city + ", " + country}
+                    </P>
                     {flag?.img ? (
                       <Image
                         src={flag.img}
