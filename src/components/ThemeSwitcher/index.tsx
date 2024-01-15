@@ -8,8 +8,8 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from "../DropdownMenu";
-import { FlexBox, LayoutContainer } from "../Layouts";
+} from "@/components/DropdownMenu";
+import { FlexBox, LayoutContainer } from "@/components/Layouts";
 import { cn } from "@/utils/helpers";
 
 const ThemeSwitcher = () => {
@@ -44,7 +44,7 @@ const ThemeSwitcher = () => {
                 key={theme}
                 value={theme}
                 className={cn(
-                  "cursor-pointer rounded-md px-8 py-4 capitalize transition-colors theme:text-color-light",
+                  "cursor-pointer rounded-md px-8 py-4 capitalize transition-colors theme:text-color-dark",
                   "hover:underline hover:outline-none",
                 )}>
                 {theme}

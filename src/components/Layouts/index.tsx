@@ -21,7 +21,7 @@ export const LayoutContainer = polyRef<
   DivLayoutProps,
   OnlyAs<PolymorphicAsProp<"section">>
 >(({ className = "", as: Element = "section", children, ...props }, ref) => (
-  <Element ref={ref} className={cn("mx-auto max-w-screen-2xl px-1648", className)} {...props}>
+  <Element ref={ref} className={cn("mx-auto max-w-screen-lg px-1648", className)} {...props}>
     {children}
   </Element>
 ));

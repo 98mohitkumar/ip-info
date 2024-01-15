@@ -18,8 +18,8 @@ const colors = {
     dark: "#121212",
   },
   color: {
-    light: "#141415",
-    dark: "#eaeaeb",
+    light: "#eaeaeb",
+    dark: "#141415",
   },
   primary: {
     light: "#283ae2",
@@ -30,8 +30,8 @@ const colors = {
     dark: "#6e1178",
   },
   accent: {
-    light: "#4f0c92",
-    dark: "#b06ef3",
+    light: "#b06ef3",
+    dark: "#4f0c92",
   },
   gray: {
     50: "#eeeeee",
@@ -54,8 +54,8 @@ const colors = {
     dark: "#D10A00",
   },
   warning: {
-    light: "#FFAC30",
-    dark: "#FFB649",
+    dark: "#FFAC30",
+    light: "#FFB649",
   },
 };
 

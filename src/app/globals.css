@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply theme:bg-background-light theme:text-color-light selection:theme:bg-accent-dark/50;
+  @apply theme:bg-background-light theme:text-color-dark selection:theme:bg-accent-dark/50;
 }
 
 /* Scrollbar */
@@ -18,7 +18,7 @@ body {
 
 /* Scroll Handle */
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-500 hover:bg-gray-600
+  @apply theme:bg-gray-500 hover:theme:bg-gray-400
 }
 
 .flex-center {

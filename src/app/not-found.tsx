@@ -1,5 +1,6 @@
 import Link from "next/link";
 import A from "@/components/Anchor";
+import Button from "@/components/Button";
 import { LayoutContainer } from "@/components/Layouts";
 import H2 from "@/components/Typography/H2";
 import P from "@/components/Typography/P";
@@ -9,10 +10,10 @@ export default function NotFound() {
     <LayoutContainer>
       <H2>Not Found</H2>
 
-      <P>Could not find requested resource</P>
+      <P className='mb-12'>Could not find requested resource</P>
 
       <A as={Link} href='/'>
-        Return Home
+        <Button background='secondary'>Return Home</Button>
       </A>
     </LayoutContainer>
   );

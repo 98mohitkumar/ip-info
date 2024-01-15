@@ -29,6 +29,10 @@ const config: Config = {
         "12/12": "100%",
       },
     },
+    fontFamily: {
+      sans: ["var(--inter)"],
+      mono: ["var(--font-geist-mono)"],
+    },
   },
   darkMode: "class",
   plugins: [

@@ -33,3 +33,12 @@ export const cn = (...classNames: ClassValue[]) => {
 };
 
 export const polyRef = forwardRef as PolyRefFunction;
+
+export const copyToClipboard = (text: string) => {
+  try {
+    navigator.clipboard.writeText(text);
+    return { success: true };
+  } catch (error) {
+    return { success: false };
+  }
+};
