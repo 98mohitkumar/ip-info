@@ -3,6 +3,7 @@ export const apiBaseUrl = "http://ipwho.is/";
 export const siteConfig = {
   title: "IP Info",
   description: "A simple app to get IP information.",
+  url: "https://knowyourip.vercel.app",
   keywords: [
     "ip info",
     "ip address",

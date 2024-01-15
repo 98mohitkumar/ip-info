@@ -1,5 +1,6 @@
 import "./globals.css";
 import { GeistMono } from "geist/font/mono";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { type ReactNode } from "react";
 import { Providers } from "./providers";
@@ -8,6 +9,10 @@ import { Toaster } from "@/components/Toaster";
 import { cn } from "@/utils/helpers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--inter" });
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://knowyourip.vercel.app"),
+};
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
