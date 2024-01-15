@@ -14,11 +14,6 @@ const Toaster = ({ ...props }: ToasterProps) => {
       position='bottom-center'
       richColors
       duration={4000}
-      toastOptions={{
-        classNames: {
-          toast: "max-w-fit",
-        },
-      }}
       {...props}
     />
   );
