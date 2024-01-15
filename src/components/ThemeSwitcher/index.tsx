@@ -19,7 +19,11 @@ const ThemeSwitcher = () => {
     <LayoutContainer as={FlexBox} className='justify-end px-1648 py-24'>
       <DropdownMenu>
         <DropdownMenuTrigger
-          className={cn("text-sm rounded-lg p-8 align-middle theme:bg-gray-400/30")}>
+          className={cn(
+            "rounded-lg p-8",
+            "align-middle text-small",
+            "transition-colors theme:bg-gray-400/30 hover:theme:bg-gray-500/10",
+          )}>
           {resolvedTheme === "dark" ? (
             <MoonIcon width={20} height={20} />
           ) : (
