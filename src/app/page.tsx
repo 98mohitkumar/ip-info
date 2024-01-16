@@ -30,12 +30,12 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
     ip,
     city,
     country,
+    region,
+    postal,
     timezone,
     flag,
     connection,
     type,
-    postal,
-    capital,
     latitude,
     longitude,
   } = result;
@@ -55,11 +55,11 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
               <InfoBand title='Connection Type' copy={type} />
               <InfoBand title='ISP' copy={connection?.isp} />
               <InfoBand
-                title='Location'
+                title='Country'
                 copy={
                   <FlexBox className='items-center gap-8'>
                     <P noMargin className='font-mono'>
-                      {city + ", " + country}
+                      {country}
                     </P>
                     {flag?.img ? (
                       <Image
@@ -74,7 +74,8 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
                 }
               />
 
-              <InfoBand title='Capital' copy={capital} />
+              <InfoBand title='City' copy={city} />
+              <InfoBand title='Region' copy={region} />
               <InfoBand title='Postal Code' copy={<CopyInfo text={postal} />} />
               <InfoBand title='Timezone' copy={`${timezone?.id} (${timezone?.abbr})`} />
               <InfoBand
