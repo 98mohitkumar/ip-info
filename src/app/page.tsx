@@ -7,6 +7,7 @@ import CopyInfo from "@/components/InfoBand/CopyInfo";
 import IPAddressSearch from "@/components/IPAddressSearch";
 import { LayoutContainer, FlexBox } from "@/components/Layouts";
 import PageNav from "@/components/PageNav";
+import RealtimeClock from "@/components/RealtimeClock";
 import P from "@/components/Typography/P";
 import { apiBaseUrl, siteConfig } from "@/globals/constants";
 
@@ -20,7 +21,7 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
   const ipQuery = searchParams?.ip;
 
   const res = await fetch(`${apiBaseUrl}${ipQuery || clientIP}`, {
-    cache: "no-store",
+    cache: "no-store"
   });
 
   const result = await res.json();
@@ -37,7 +38,7 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
     connection,
     type,
     latitude,
-    longitude,
+    longitude
   } = result;
 
   return (
@@ -78,12 +79,7 @@ export default async function Home({ searchParams }: { searchParams?: { ip: stri
               <InfoBand title='Region' copy={region} />
               <InfoBand title='Postal Code' copy={<CopyInfo text={postal} />} />
               <InfoBand title='Timezone' copy={`${timezone?.id} (${timezone?.abbr})`} />
-              <InfoBand
-                title='Current Time'
-                copy={new Date(timezone?.current_time).toLocaleTimeString("en-US", {
-                  timeZone: timezone?.id,
-                })}
-              />
+              <InfoBand title='Current Time' copy={<RealtimeClock timeZone={timezone?.id} />} />
             </div>
 
             <div className='mb-24 w-full'>
