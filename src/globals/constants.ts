@@ -10,9 +10,9 @@ export const siteConfig = {
     "ip address info",
     "ip address information",
     "ip address lookup",
-    "ip lookup",
+    "ip lookup"
   ],
   siteName: "IP Info",
   locale: "en_US",
-  type: "website",
+  type: "website"
 };

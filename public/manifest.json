@@ -1,0 +1,33 @@
+{
+  "name": "IP Info",
+  "short_name": "IP Info",
+  "description": "A simple app to get IP information.",
+  "icons": [
+    {
+      "src": "/maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#b06ef3",
+  "background_color": "#121212",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

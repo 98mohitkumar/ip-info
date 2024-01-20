@@ -9,11 +9,7 @@ import { LayoutContainer, FlexBox } from "@/components/Layouts";
 import PageNav from "@/components/PageNav";
 import RealtimeClock from "@/components/RealtimeClock";
 import P from "@/components/Typography/P";
-import { apiBaseUrl, siteConfig } from "@/globals/constants";
-
-export async function generateMetadata() {
-  return { ...siteConfig, openGraph: siteConfig };
-}
+import { apiBaseUrl } from "@/globals/constants";
 
 export default async function Home({ searchParams }: { searchParams?: { ip: string } }) {
   const forwardedFor = headers().get("x-forwarded-for");
